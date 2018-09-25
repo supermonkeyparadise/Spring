@@ -2,9 +2,11 @@ package com.tronbrain.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("thatSillyCoach")
+@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	@Autowired
@@ -16,32 +18,24 @@ public class TennisCoach implements Coach {
 		System.out.println(">> TennisCoach: inside default constructor");
 	}
 
-	
-    /*
-    @Autowired 
-    public TennisCoach(FortuneService theFortuneService) {
-    	this.fortuneService = theFortuneService;
-    }
-    */
-	 
+	/*
+	 * @Autowired public TennisCoach(FortuneService theFortuneService) {
+	 * this.fortuneService = theFortuneService; }
+	 */
 
 	// define a setter method
 	/*
-	@Autowired
-	public void setFortuneService(FortuneService fortuneService) {
-		System.out.println(">> TennisCoach: inside setFortuneService");
-		this.fortuneService = fortuneService;
-	}
-	*/
-	
+	 * @Autowired public void setFortuneService(FortuneService fortuneService) {
+	 * System.out.println(">> TennisCoach: inside setFortuneService");
+	 * this.fortuneService = fortuneService; }
+	 */
+
 	// define a setter method
 	/*
-	@Autowired
-	public void doSomeCrazyStuff(FortuneService fortuneService) {
-		System.out.println(">> TennisCoach: inside doSomeCrazyStuff");
-		this.fortuneService = fortuneService;
-	}
-	*/
+	 * @Autowired public void doSomeCrazyStuff(FortuneService fortuneService) {
+	 * System.out.println(">> TennisCoach: inside doSomeCrazyStuff");
+	 * this.fortuneService = fortuneService; }
+	 */
 
 	@Override
 	public String getDailyWorkout() {
